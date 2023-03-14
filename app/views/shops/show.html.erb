@@ -1,0 +1,20 @@
+<%= render partial: "shared/navbar" %>
+
+
+<h2><%= @shop.name %></h2>
+<%= link_to @shop.shop_url, @shop.shop_url,target: :_blank %> <br/>
+<p><%= @shop.street_address %>, <%= @shop.city %>, <%= link_to @shop.country, "https://www.tea.ca/" %></p>
+</div>
+
+
+<%= link_to "Delete Shop", shop_path, method: :delete %>
+<%= link_to "Edit Shop", edit_shop_path %>
+
+<%= link_to "All Shops", shops_path %>
+
+
+
+
+
+
+

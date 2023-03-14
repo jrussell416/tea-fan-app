@@ -1,0 +1,23 @@
+<%= render partial: "shared/navbar" %>
+
+Create new recipe
+
+<%= form_for @recipe do |f| %>
+    <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    </div>
+    <div class="mb-3">
+    <%= f.label :recipe_type %>
+    <%= f.select :recipe_type, [[""], ["Drink"], ["Food"], ["Baked Good"]]%>
+    </div>
+    <div>
+    <%= f.label :recipe_instructions %>
+    <%= f.text_area :instructions, size: "50x10" %>
+    </div>
+    <div class="mb-3">
+    <%= f.label :recipe_url %>
+    <%= f.url_field :recipe_url, class: "form-control", placeholder: "Enter website address for recipe" %>
+</div>
+    <%= f.submit %>
+<% end %>

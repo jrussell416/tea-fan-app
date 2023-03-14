@@ -1,0 +1,51 @@
+    <%= render partial: "shared/navbar" %>
+
+
+
+    <h2>Welcome, <%= current_user_name %></h2>
+ <% if current_user.admin? %>
+      <p>You're an admin!</p>
+      <%end %>
+
+<div class="row">
+  <div class="column">
+    <div class="card", onClick="location.href='<%= stashes_path %>'">
+      <%= image_tag("tea_pics/Store-Loose-Leaf-Tea-Intro.jpg", class: "img-stash", width:"160px", height:"140px") %>
+      <h3>Personal Tea Stash</h3>
+    </div>
+  </div>
+
+  <div class="column">
+      <div class="card", onClick="location.href='<%= favorite_recipes_path %>'">
+      <%= image_tag("tea_pics/reyhaneh-mehrnejad-sm", class: "img-stash", width:"160px", height:"140px") %>
+      <h3>Saved Recipes</h3>
+   </div>
+  </div>
+
+
+  <div class="column">
+    <div class="card", onClick="location.href='<%= shops_path %>'">
+      <%= image_tag("tea_pics/tamara-malaniy-tea-shop.jpg", class: "img-stash", width:"160px", height:"140px") %>
+      <h3>Find a Shop</h3>
+   </div>
+  </div>
+
+  <div class="column">
+      <div class="card", onClick="location.href='<%= recipes_path %>'">
+      <%= image_tag("tea_pics/may-lawrence-matcha-brownie.jpg", class: "img-stash", width:"160px", height:"140px") %>
+      <h3>All Tea Recipes</h3>
+   </div>
+  </div>
+
+
+</div>
+    <% if current_user.admin? %>
+    <div class="row justify-content-center">
+      <div class="column">
+        <div class="card", onClick="location.href='<%= admin_index_path %>'">
+          <%= image_tag("tea_pics/admin.avif", class: "img-stash", width:"160px", height:"140px") %>
+          <h3>Boring Admin Stuff</h3>
+        </div>
+      </div>
+    </div>
+    <%end %>

@@ -1,0 +1,12 @@
+<%= render partial: "shared/navbar" %>
+
+<h2>Favourite Recipes</h2>
+
+<% @user.favorites.each do |recipe| %>
+    
+<div class="card" style="width: 18rem;", onClick="location.href='<%= recipe_path(recipe) %>'">
+  <%= recipe.name %>
+</div>
+
+<% end %>
+

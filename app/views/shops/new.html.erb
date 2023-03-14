@@ -1,0 +1,27 @@
+<%= render partial: "shared/navbar" %>
+
+Create new shop
+
+<%= form_for(@shop) do |f| %>
+    <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    </div>
+    <div>
+    <%= f.label :shop_url %>
+    <%= f.url_field :shop_url, class: "form-control", placeholder: "Enter shop site" %>
+    </div>
+    <div>
+    <%= f.label :street_address %>
+    <%= f.text_field :street_address %>
+    </div>
+    <div>
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+    </div>
+    <div>
+    <%= f.label :country %>
+    <%= f.text_field :country %>
+    </div>
+    <%= f.submit %>
+<% end %>

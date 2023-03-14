@@ -1,0 +1,23 @@
+<%= render partial: "shared/navbar" %>
+
+<h2><%= @recipe.name %></h2> <%= @recipe.recipe_type %>
+
+<div>
+<%= link_to @recipe.recipe_url, @recipe.recipe_url, target: :_blank %> <br/>
+<p>Recipe Instructions: <%= @recipe.instructions %> </p>
+</div>
+
+<% if current_user_name %>
+  <%= link_to "favorite",   favorite_recipe_path(@recipe, type: "favorite"), method: :put %>
+  <%= link_to "unfavorite", favorite_recipe_path(@recipe, type: "unfavorite"), method: :put %>
+<% end %>
+
+<%= link_to "Delete Recipe", recipe_path, method: :delete %>
+<%= link_to "Edit Recipe", edit_recipe_path %>
+
+<%= link_to "All Recipes", recipes_path %>
+
+
+
+
+

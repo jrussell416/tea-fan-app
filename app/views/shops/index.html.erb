@@ -1,0 +1,12 @@
+<%= render partial: "shared/navbar" %>
+    <h2>Welcome to the shops page</h2>
+    <h3>A place to share information on tea shops around the world</h3>
+      <%= image_tag("tea_pics/petr-sevcovic-sm-resize.jpg", class: "center") %>
+
+<% @shops.each do |shop| %>
+
+    <div>
+        <%= link_to shop.name, shop_path(shop) %>
+    </div>
+<% end %>
+<%= link_to "Add New Shop", new_shop_path %>

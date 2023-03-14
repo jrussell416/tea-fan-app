@@ -1,0 +1,23 @@
+<%= render partial: "shared/navbar" %>
+ 
+<h2>View your personal tea collection</h2>
+ 
+<% @user.stashes.each do |s| %>
+
+<div class="row">
+  <div class="column">
+    <div class="card">
+       Tea name: <%= s.tea_name %> <br/>
+       Tea Type: <%= s.tea_type %> <br/>
+       Purchased at: <%= s.purchased_at %> <br/>
+       Amount in stash: <%= s.stash_amount %> <br/>
+       Tea Notes: <%= s.notes %> <br/>
+       <%= link_to "delete forever", stash_path(s), method: :delete %>
+       <%= link_to "edit entry", edit_stash_path(s) %>
+    </div>
+</div>
+</div>
+<% end %> 
+ 
+<%= link_to "Add Items", new_stash_path %>
+ 

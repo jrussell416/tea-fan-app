@@ -1,0 +1,13 @@
+<%= render partial: "shared/navbar" %>
+
+<h2>All Recipes</h2>
+
+
+<% @recipes.each do |recipe| %>
+
+    <div>
+        <%= link_to recipe.name, recipe_path(recipe) %>
+    </div>
+<% end %>
+<%= link_to "Add New Recipe", new_recipe_path %>
+

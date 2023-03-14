@@ -1,0 +1,13 @@
+<h2>Welcome back</h2>
+
+<%= form_with url: logins_path do |f| %>
+<div class="mb-3">
+<%= f.label :username %>
+<%= f.text_field :user_name, class: "form-control", placeholder: "MyUserName" %>
+</div>
+<div class="mb-3">
+<%= f.label :password %>
+<%= f.password_field :password, class: "form-control", placeholder: "password" %>
+</div>
+<%= f.submit "Log In" %>
+<% end %>
