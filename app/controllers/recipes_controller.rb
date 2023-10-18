@@ -17,9 +17,24 @@ class RecipesController < ApplicationController
     recipe_instructions = params[:recipe][:instructions]
     recipe_site = params[:recipe][:recipe_url]
 
-    Recipe.create(name: recipe_name, recipe_type: recipe_type, instructions: recipe_instructions, recipe_url: recipe_site)
-    redirect_to recipes_path
-  end
+    @recipe = Recipe.create(name: recipe_name, recipe_type: recipe_type, instructions: recipe_instructions, recipe_url: recipe_site)
+    if @recipe.save
+      flash[:success] = "Recipe was successfully saved"
+      redirect_to recipe_path(@recipe)
+
+      Thread.new do
+        sleep(5)
+        flash.discard[:success]
+      end
+
+
+    else
+      render :new
+    end
+
+
+
+    end
 
   def edit
     recipe_id = params[:id]
@@ -49,7 +64,7 @@ class RecipesController < ApplicationController
     type = params[:type]
     if type == "favorite"
       current_user.favorites << @recipe
-      redirect_to favorite_recipes_path	
+      redirect_to favorite_recipes_path
 
     elsif type == "unfavorite"
       current_user.favorites.delete(@recipe)

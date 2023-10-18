@@ -9,15 +9,20 @@ Create new recipe
     </div>
     <div class="mb-3">
     <%= f.label :recipe_type %>
-    <%= f.select :recipe_type, [[""], ["Drink"], ["Food"], ["Baked Good"]]%>
+    <%= f.select :recipe_type, [[""], ["Drink"], ["Food"], ["Baked"], ["Cooked"]]%>
     </div>
     <div>
     <%= f.label :recipe_instructions %>
-    <%= f.text_area :instructions, size: "50x10" %>
+    <%= f.rich_text_area :instructions %>
     </div>
     <div class="mb-3">
     <%= f.label :recipe_url %>
     <%= f.url_field :recipe_url, class: "form-control", placeholder: "Enter website address for recipe" %>
 </div>
+
     <%= f.submit %>
 <% end %>
+
+<p style="margin-top: 20px;">
+  <%= link_to "Cancel and return to main recipes page", recipes_path %>
+</p>

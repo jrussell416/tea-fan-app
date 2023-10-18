@@ -13,7 +13,7 @@ Edit recipe
     </div>
     <div>
     <%= f.label :recipe_instructions %>
-    <%= f.text_area :instructions, size: "50x10" %>
+    <%= f.rich_text_area :instructions  %>
     </div>
     <div class="mb-3">
     <%= f.label :recipe_url %>
@@ -22,3 +22,6 @@ Edit recipe
     <%= f.submit %>
 <% end %>
 
+<p style="margin-top: 20px;">
+  <%= link_to "Cancel and return to main recipes page", recipes_path %>
+</p>

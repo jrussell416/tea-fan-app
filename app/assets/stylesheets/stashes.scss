@@ -10,7 +10,7 @@
     width: 25%;
     padding: 0 10px;
   }
-  
+
   /* Style the counter cards */
   .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
@@ -20,7 +20,7 @@
     transition-duration: 0.4s;
     cursor: pointer;
   }
-  
+
   /* Centre the image in the card */
   .img-stash {
     display: block;
@@ -28,7 +28,7 @@
     margin-right: auto;
     width: 50%;
   }
-  
+
   /* Responsive columns - one column layout (vertical) on small screens */
   @media screen and (max-width: 600px) {
     .column {

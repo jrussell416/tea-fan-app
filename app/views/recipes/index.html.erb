@@ -4,10 +4,24 @@
 
 
 <% @recipes.each do |recipe| %>
-
-    <div>
-        <%= link_to recipe.name, recipe_path(recipe) %>
-    </div>
+  <div>
+    <strong>
+    <%= link_to recipe.name, recipe_path(recipe) %>
+    </strong>
+  </div>
 <% end %>
+
+
+
 <%= link_to "Add New Recipe", new_recipe_path %>
 
+<div class="row">
+  <% @recipes.each do |recipe| %>
+    <div class="column">
+      <div class="card" onClick="location.href='<%= recipe_path(recipe) %>'">
+        <h3><%= recipe.name %></h3>
+        <p><%= recipe.recipe_type %></p>
+      </div>
+    </div>
+  <% end %>
+</div>

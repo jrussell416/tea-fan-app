@@ -1,6 +1,10 @@
 class ShopsController < ApplicationController
   def index
-    @shops = Shop.all
+    if params[:query].present?
+      @shops = Shop.where("lower(country) =?", params[:query].downcase)
+    else
+      @shops = Shop.all
+    end
   end
 
   def show
@@ -39,6 +43,7 @@ class ShopsController < ApplicationController
     @shop.destroy
     redirect_to shops_path
   end
+
 
   def shop_params
     params.require(:shop).permit(:name, :shop_url, :street_address, :city, :country)

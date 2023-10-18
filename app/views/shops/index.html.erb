@@ -3,10 +3,21 @@
     <h3>A place to share information on tea shops around the world</h3>
       <%= image_tag("tea_pics/petr-sevcovic-sm-resize.jpg", class: "center") %>
 
+<div>
+  <%= form_tag shops_path, method: "get" do %>
+    <%= label_tag(:query, "Search by country name:") %>
+    <%= text_field_tag :query, params[:query] %>
+    <%= submit_tag("Search") %>
+  <% end %>
+</div>
+
 <% @shops.each do |shop| %>
 
     <div>
-        <%= link_to shop.name, shop_path(shop) %>
+        <%= link_to shop.name, shop_path(shop)%> <%= shop.country %>
     </div>
 <% end %>
+
+
+
 <%= link_to "Add New Shop", new_shop_path %>

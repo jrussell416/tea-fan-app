@@ -1,7 +1,7 @@
 <%= render partial: "shared/navbar" %>
 
 Add a new entry into your tea collection
- 
+
 <%= form_for @stash do |f| %>
     <div class="mb-3">
     <%= f.label :tea_name %>
@@ -25,3 +25,7 @@ Add a new entry into your tea collection
     </div>
     <%= f.submit %>
 <% end %>
+
+<p style="margin-top: 20px;">
+  <%= link_to "Cancel and return to stash page", stashes_path	%>
+</p>
